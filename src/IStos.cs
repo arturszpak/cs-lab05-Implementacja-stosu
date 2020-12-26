@@ -37,5 +37,8 @@
 
         //kopiuje i eksportuje stos do tablicy
         T[] ToArray();
+
+        //indekser
+        T this[int index] { get; }
     }
 }

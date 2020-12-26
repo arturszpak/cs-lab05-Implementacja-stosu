@@ -6,13 +6,19 @@ namespace Stos
     {
         static void Main(string[] args)
         {
-            StosWTablicy<string> s = new StosWTablicy<string>(8);
-            for(int i=0; i< 90; i++){
-                s.Push("test");
-            }
-
+             StosWTablicy<string> s = new StosWTablicy<string>(2);
+            s.Push("km");
+            s.Push("aa");
+            s.Push("xx");
             foreach (var x in s.ToArray())
                 Console.WriteLine(x);
+
+            foreach (var x in ((StosWTablicy<string>)s).TopToBottom)
+                Console.WriteLine(x);
+
+            var stosToArray = s.ToArray();
+            var stosToArrayReadOnly = s.ToArrayReadOnly();
+            stosToArray[0] = "test";
 
             Console.WriteLine();
         }
