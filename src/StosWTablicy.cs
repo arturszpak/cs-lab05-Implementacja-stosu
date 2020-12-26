@@ -51,5 +51,12 @@ namespace Stos
                 temp[i] = tab[i];
             return temp;
         }
+
+        public void TrimExcess()
+        {
+            int newSize = tab.Length + (int)Math.Ceiling(szczyt * 0.9);
+            Console.WriteLine(newSize);
+            Array.Resize(ref tab, newSize);
+        }
     }
 }
