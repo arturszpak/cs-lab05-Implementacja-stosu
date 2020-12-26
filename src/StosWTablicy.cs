@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Stos
 {
-   public class StosWTablicy<T> : IStos<T>
+    public class StosWTablicy<T> : IStos<T>
     {
         private T[] tab;
         private int szczyt = -1;
@@ -58,7 +58,6 @@ namespace Stos
         public void TrimExcess()
         {
             int newSize = tab.Length + (int)Math.Ceiling(szczyt * 0.9);
-            Console.WriteLine(newSize);
             Array.Resize(ref tab, newSize);
         }
 
