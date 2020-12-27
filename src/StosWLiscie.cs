@@ -112,9 +112,8 @@ namespace Stos
             public T Current => stos[position];
             object IEnumerator.Current => Current;
 
-            public void Dispose() { } //nie wymaga implementacji
+            public void Dispose() { }
 
-            //Przesuwa focus na następny element i zwraca true, jeśli nie da się przesunąć to zwraca false
             public bool MoveNext()
             {
                 if (position < stos.Count - 1)
@@ -132,8 +131,6 @@ namespace Stos
         public T[] ToArray()
         {
             if (IsEmpty) throw new StosEmptyException();
-            //return tab;  //bardzo źle - reguły hermetyzacji
-            //poprawnie:
             int i = 0;
             T[] temp = new T[Size()];
             foreach (var x in this)

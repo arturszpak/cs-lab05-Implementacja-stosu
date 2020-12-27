@@ -72,11 +72,6 @@ namespace Stos
             return new EnumeratorStosu(this);
         }
 
-        //public IEnumerator<T> GetEnumerator()
-        //{
-        //    for (int i = 0; i < Count; i++)
-        //        yield return this[i];
-        //}
 
         public IEnumerable<T> TopToBottom
         {
@@ -101,9 +96,7 @@ namespace Stos
             public T Current => stos.tab[position];
             object IEnumerator.Current => Current;
 
-            public void Dispose() { } //nie wymaga implementacji
-
-            //Przesuwa focus na następny element i zwraca true, jeśli nie da się przesunąć to zwraca false
+            public void Dispose() { } 
             public bool MoveNext()
             {
                 if (position < stos.Count - 1)
